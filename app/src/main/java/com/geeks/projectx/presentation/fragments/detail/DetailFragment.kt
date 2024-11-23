@@ -1,4 +1,4 @@
-package com.geeks.cleanArch.presentation.fragments.detail
+package com.geeks.projectx.presentation.fragments.detail
 
 import android.net.Uri
 import android.os.Bundle
@@ -10,11 +10,11 @@ import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import by.kirich1409.viewbindingdelegate.viewBinding
 import com.example.domain.result.Result
-import com.geeks.cleanArch.R
-import com.geeks.cleanArch.databinding.FragmentDetailBinding
-import com.geeks.cleanArch.presentation.fragments.LoadingState
-import com.geeks.cleanArch.presentation.fragments.TaskViewModel
-import com.geeks.cleanArch.presentation.model.TaskUI
+import com.geeks.projectx.presentation.fragments.LoadingState
+import com.geeks.projectx.presentation.fragments.TaskViewModel
+import com.geeks.projectx.presentation.model.TaskUI
+import com.projectx.hw7.R
+import com.projectx.hw7.databinding.FragmentDetailBinding
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
@@ -85,7 +85,9 @@ class DetailFragment : Fragment(R.layout.fragment_detail) {
                 taskDate = binding.tvDate.text.toString()
             )
             updatedTask?.let {
-                viewModel.updateTask(it)
+                viewModel.viewModelScope.launch {
+                    viewModel.getTask(it.id)
+                }
                 findNavController().navigateUp()
             }
         }

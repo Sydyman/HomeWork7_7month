@@ -6,11 +6,11 @@ plugins {
 }
 
 android {
-    namespace = "com.geeks.cleanArch"
+    namespace = "com.projectx.hw7"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "com.geeks.cleanArch"
+        applicationId = "com.projectx.hw7"
         minSdk = 24
         targetSdk = 34
         versionCode = 1
@@ -44,16 +44,9 @@ dependencies {
 
     implementation(project(":domain"))
     implementation(project(":data"))
-    implementation(project(":addTaskFeature"))
-
-    // Koin
+    implementation(project(":addTask"))
     implementation(libs.koin.android)
-
-    // Room
-   // implementation(libs.androidx.room.ktx)
-    //ksp(libs.androidx.room.compiler)
     implementation(libs.gson)
-
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)

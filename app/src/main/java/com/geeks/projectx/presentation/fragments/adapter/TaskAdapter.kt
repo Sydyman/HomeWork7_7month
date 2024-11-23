@@ -1,11 +1,11 @@
-package com.geeks.cleanArch.presentation.fragments.adapter
+package com.geeks.projectx.presentation.fragments.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.RecyclerView
-import com.geeks.cleanArch.databinding.ItemTaskBinding
-import com.geeks.cleanArch.presentation.model.TaskUI
+import com.geeks.projectx.databinding.ItemTaskBinding
+import com.geeks.projectx.presentation.model.TaskUI
 
 class TaskAdapter(
     private var taskList: List<TaskUI>,

@@ -1,6 +1,6 @@
-package com.geeks.cleanArch.presentation.di
+package com.geeks.projectx.presentation.di
 
-import com.geeks.cleanArch.presentation.fragments.TaskViewModel
+import com.geeks.projectx.presentation.fragments.TaskViewModel
 import org.koin.core.module.Module
 import org.koin.dsl.module
 

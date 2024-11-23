@@ -20,7 +20,7 @@ class AddTaskViewModel(
     fun insertTask(taskUI: TaskUI) {
         viewModelScope.launch(Dispatchers.IO) {
             val message = insertTaskUseCase.insertTask(taskUI.toDomain(), Build.VERSION.SDK_INT)
-            _insertMessageStateFlow.value = message
+            _insertMessageStateFlow.value = message.toString()
         }
 
     }

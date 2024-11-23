@@ -1,4 +1,4 @@
-package com.geeks.cleanArch.presentation.model
+package com.geeks.projectx.presentation.model
 
 import com.example.domain.model.TaskModel
 

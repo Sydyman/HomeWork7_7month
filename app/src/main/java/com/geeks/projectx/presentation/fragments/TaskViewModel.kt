@@ -1,22 +1,18 @@
-package com.geeks.cleanArch.presentation.fragments
+package com.geeks.projectx.presentation.fragments
 
-import android.os.Build
-import android.widget.Toast
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.domain.model.TaskModel
 import com.example.domain.result.Result
 import com.example.domain.usecase.DeleteTaskUseCase
 import com.example.domain.usecase.GetAllTasksUseCase
 import com.example.domain.usecase.GetTaskUseCase
 import com.example.domain.usecase.InsertTaskUseCase
 import com.example.domain.usecase.UpdateTaskUseCase
-import com.geeks.cleanArch.presentation.model.TaskUI
-import com.geeks.cleanArch.presentation.model.toDomain
-import com.geeks.cleanArch.presentation.model.toUI
+import com.geeks.projectx.presentation.model.TaskUI
+import com.geeks.projectx.presentation.model.toDomain
+import com.geeks.projectx.presentation.model.toUI
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
@@ -31,6 +27,8 @@ class TaskViewModel(
     private val deleteTaskUseCase: DeleteTaskUseCase,
     private val getTaskUseCase: GetTaskUseCase
 ) : ViewModel() {
+    private val _insertMessageStateFlow = MutableStateFlow(String())
+    val insertMessageFlow: StateFlow<String> = _insertMessageStateFlow.asStateFlow()
 
     private val _tasksStateFlow = MutableStateFlow<List<TaskUI>>(emptyList())
     val tasksFlow: StateFlow<List<TaskUI>> = _tasksStateFlow.asStateFlow()
@@ -40,9 +38,6 @@ class TaskViewModel(
 
     private val _taskStateFlow = MutableStateFlow<Result<TaskUI>>(Result.Loading)
     val taskStateFlow: StateFlow<Result<TaskUI>> = _taskStateFlow.asStateFlow()
-
-    private val _insertMessageStateFlow = MutableStateFlow(String())
-    val insertMessageFlow: StateFlow<String> = _insertMessageStateFlow.asStateFlow()
 
     private val _updateMessageStateFlow = MutableStateFlow(String())
     val updateMessageFlow: StateFlow<String> = _updateMessageStateFlow.asStateFlow()

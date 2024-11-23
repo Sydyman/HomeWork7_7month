@@ -19,8 +19,8 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "CleanArch"
+rootProject.name = "hw7"
 include(":app")
 include(":data")
 include(":domain")
-include(":addTaskFeature")
+include(":addTask")

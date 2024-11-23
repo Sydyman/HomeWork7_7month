@@ -1,4 +1,4 @@
-package com.geeks.cleanArch
+package com.geeks.projectx
 
 import org.junit.Test
 

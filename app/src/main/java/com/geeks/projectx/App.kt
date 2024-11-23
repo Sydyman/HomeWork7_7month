@@ -1,9 +1,9 @@
-package com.geeks.cleanArch
+package com.geeks.projectx
 
 import android.app.Application
 import com.example.addtaskfeature.module.addTaskModule
 import com.example.domain.di.domainModule
-import com.geeks.cleanArch.presentation.di.uiModule
+import com.geeks.projectx.presentation.di.uiModule
 import com.geeks.data.database.di.dataModules
 import org.koin.android.ext.koin.androidContext
 import org.koin.android.ext.koin.androidLogger
