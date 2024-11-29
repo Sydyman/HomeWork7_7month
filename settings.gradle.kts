@@ -20,7 +20,7 @@ dependencyResolutionManagement {
 }
 
 rootProject.name = "hw7"
-include(":app")
-include(":data")
-include(":domain")
-include(":addTask")
+include(":appLayer")
+include(":dataLayer")
+include(":domainLayer")
+include(":addTaskFeature")

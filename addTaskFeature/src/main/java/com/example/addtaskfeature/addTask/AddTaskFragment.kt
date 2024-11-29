@@ -6,7 +6,6 @@ import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.viewModelScope
-import androidx.navigation.fragment.findNavController
 import by.kirich1409.viewbindingdelegate.viewBinding
 import com.example.addtaskfeature.R
 import com.example.addtaskfeature.databinding.FragmentAddTaskBinding
@@ -39,11 +38,9 @@ class AddTaskFragment : Fragment(R.layout.fragment_add_task) {
     }
 
     private fun setupListeners() {
-
         binding.changeImage.setOnClickListener {
             imageLauncher.launch("image/*")
         }
-
         binding.btnAddTask.setOnClickListener {
             val task = binding.tvTask.text.toString()
             val date = binding.tvDate.text.toString()
